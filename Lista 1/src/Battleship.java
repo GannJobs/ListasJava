@@ -19,13 +19,13 @@ public class Battleship {
                     player1TargetBoard[i][j] = ' ';
                     player2TargetBoard[i][j] = ' ';
                 } else if (i == 0) {
-                    char a = (char) (j);
+                    char a = (char) (j+48);
                     player1Board[i][j] = a;
                     player2Board[i][j] = a;
                     player1TargetBoard[i][j] = a;
                     player2TargetBoard[i][j] = a;
                 } else if (j == 0) {
-                    char a = (char) (i);
+                    char a = (char) (i+48);
                     player1Board[i][j] = a;
                     player2Board[i][j] = a;
                     player1TargetBoard[i][j] = a;
@@ -38,6 +38,17 @@ public class Battleship {
                 }
             }
         }
+
+        // Imprime o tabuleiro do jogador 1
+        System.out.println();
+        System.out.println("Player 1 board:");
+        for (int i = 0; i < player1Board.length; i++) {
+            for (int j = 0; j < player1Board[i].length; j++) {
+                System.out.print(player1Board[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
 
         // Imprime a mensagem de boas-vindas
         System.out.println("Welcome to Battleship!!!");
