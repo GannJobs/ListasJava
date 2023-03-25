@@ -1,6 +1,6 @@
 2.
 Em Java, a precedência de operadores determina a ordem em que as operações aritméticas são executadas em uma expressão. 
-A tabela abaixo mostra a ordem de precedência dos operadores em Java, do mais alto para o mais baixo:
+Aqui está a ordem:
 
 Operadores unários: ++, --, +, -, !, ~
 Multiplicação, divisão e resto da divisão: *, /, %
@@ -17,15 +17,10 @@ Condicional ternário: ?:
 Atribuição: =, +=, -=, *=, /=, %=, &=, ^=, |=, <<=, >>=, >>>=
 
 Por exemplo, na expressão "a + b * c", a multiplicação é realizada antes da adição porque o operador de multiplicação tem 
-uma precedência maior que o operador de adição.
-
-No entanto, é possível alterar a ordem das operações aritméticas usando parênteses. 
+uma precedência maior que o operador de adição, para resolver isso usamos os parênteses.
 Qualquer expressão dentro de parênteses é avaliada primeiro, independentemente da precedência dos operadores. 
 Por exemplo, na expressão "(a + b) * c", a adição é realizada primeiro porque os parênteses têm uma precedência maior que 
 o operador de multiplicação.
-
-Portanto, é importante usar parênteses para garantir que a expressão seja avaliada na ordem correta e para evitar erros e resultados inesperados. 
-Além disso, o uso adequado de parênteses pode tornar o código mais legível e fácil de entender para outros programadores.
 
 ---------------------------------------------------------------------------------------------------------------------------
 
@@ -40,7 +35,7 @@ condicao: a condição a ser avaliada. Se for verdadeira, a expressão1 será ex
 expressao1: a expressão a ser executada se a condição for verdadeira.
 expressao2: a expressão a ser executada se a condição for falsa.
 
-O operador condicional ternário em Java é útil para simplificar a escrita de código e torná-lo mais legível.
-É importante lembrar que o operador condicional ternário só deve ser usado em expressões simples. Para expressões mais complexas, 
-é melhor usar o comando if-else convencional.
-É importante que as expressões expressao1 e expressao2 tenham o mesmo tipo de dados para evitar erros de compilação.
+O operador condicional ternário em Java é útil para simplificar a escrita de código e torná-lo mais legível,
+é importante lembrar que o operador condicional ternário só deve ser usado em expressões simples. 
+Para expressões mais complexas, é melhor usar o comando if-else convencional.
+OBS: É importante que as expressões expressao1 e expressao2 tenham o mesmo tipo de dados para evitar erros de compilação.
