@@ -1,0 +1,287 @@
+2. 
+Modelo LamapadaTresEstados
+Início do modelo
+	dado estado = apagada;
+
+	operação apagar ()
+		inicio
+			estado = apagada;
+		fim
+
+	operação ascender ()
+		inicio
+			estado = acesa;
+		fim
+
+	operação meiaLuz ()
+		inicio
+			estado = meia-luz;
+		fim
+
+3.
+Modelo LamapadaTresEstados
+Início do modelo
+	dado potencia = 0%;
+
+	operação aumentarP ()
+		inicio
+			potencia = 100%;
+		fim
+	
+	operação diminuirP ()
+		inicio
+			potencia = 0%;
+		fim
+4.
+Modelo LamapadaTresEstados
+Início do modelo
+	dado estado = apagada;
+
+	operação apagar ()
+		inicio
+			estado = apagada;
+		fim
+
+	operação ascender ()
+		inicio
+			estado = acesa;
+		fim
+
+	operação meiaLuz ()
+		inicio
+			estado = meia-luz;
+		fim
+
+	operação estaLigada ()
+		inicio
+			se estado for acesa ou meia-luz então faça
+				retorne verdadeiro;
+			senão
+				retorne falso;
+		fim
+
+5.
+Operação abreConta(nome, depósito, especial)
+Inicio
+	nomeDoCorrentista = nome;
+	se depósito for menor do que 0 então faça
+			saldo = 0;
+	senão
+			saldo = depósito;
+	contaÉEspecial = especial;
+fim
+
+6.
+Operação abreConta(nome, depósito, especial)
+Inicio
+	nomeDoCorrentista = nome;
+	contaÉEspecial = especial;
+	se contaÉEspecial for especial então faça
+			saldo = depósito;
+	senão
+	se depósito for menor do que 0 então faça
+		Alerta (“Está tentando iniciar a conta normal com um valor negativo!”);
+		saldo = 0;
+	senão
+		saldo = depósito;
+	contaÉEspecial = especial;
+fim
+
+7.
+Modelo HoraAproximada
+Dado horas = 0, minutos = 0, segundos = 0;
+
+Operação temporalizador():
+    Inicio 
+	Sempre
+			Segundos++;
+			Se segundos for igual a 60 então faça:
+				Minutos++;
+				Segundos = 0;
+				Se minutos for igual a 60 então faça:
+					Horas++;
+					Minutos = 0;
+					Se Horas for igual a 24 então faça:
+						Horas = 0;
+    Fim 
+
+8.
+Modelo HoraPrecisa
+Dado horas = 0, minutos = 0, segundos = 0, Csegundos = 0;
+
+Operação temporalizador():
+    Inicio 
+	Sempre
+			Csegundos++;
+			Se Csegundos for igual a 100 então faça:
+				Csegundos = 0;
+			Segundos++;
+			Se segundos for igual a 60 então faça:
+				Minutos++;
+				Segundos = 0;
+				Se minutos for igual a 60 então faça:
+					Horas++;
+					Minutos = 0;
+					Se Horas for igual a 24 então faça:
+						Horas = 0;
+   Fim 
+9.
+Modelo livro
+	Dados nome, autor, dataLançamento, vendas;
+
+10.
+Modelo LivroDeLivraria
+	Dados ID, nome, autor, dataLançamento, estoque;
+
+	Operação Venda (quantidade de livros):
+		    Inicio
+			Se o ID do livro possui um estoque maior que 0 então faça
+				Se o pedido de compra pede uma quantidade disponível então faça
+					Estoque -= (quantidade de livros);			
+					Alerta (“Vendido x unidade(s) do Livro “ + nome);
+				Senão
+					Alerta (“Peça uma quantidade que tenha no estoque!”);
+			Senão
+				Alerta (“Estoque insuficiente para venda!”);
+   	      Fim
+	
+	Operação reposiçãoDeEstoque (quantidade de livros):
+		    Inicio 
+			Estoque += (quantidade de livros);
+		    Fim
+11.
+Modelo LivroDeBiblioteca
+	Dados ID, nome, autor, dataLançamento, estoque, estado = disponivel;
+
+	Operação Emprestimo (quantidade de livros):
+		    Inicio 
+			Se o ID do livro possui um estoque maior que 0 e alguma cópia com o estado “disponível” então faça
+				Se o pedido de emprestimo pede uma quantidade disponível então faça
+					Estoque -= (quantidade de livros);			
+					Alerta (“Emprestada x unidade(s) do Livro “ + nome);
+				Senão
+					Alerta (“Peça uma quantidade que tenha no estoque!”);
+			Senão
+				Alerta (“Não temos cópias para empréstimos!”);
+		     Fim 
+	
+	Operação AumentoDeEstoque (quantidade de livros):
+		    Inicio
+			Estoque += (quantidade de livros);
+  		    Fim
+
+A principal diferença se da nos atributos e na função de venda e empréstimo, enquanto da livraria ela se preocupa com apenas saber se tem em estoque o livro para a venda, a biblioteca se preocupa se além de ter em estoque, as cópias do livro têm que estar disponíveis para o empréstimo, ou seja, elas não podem estar emprestadas para realizar essa operação.
+
+12.
+Modelo Ponto2D
+	Dados x, y, ponto(x X,y Y);
+
+	Operação DesenharPonto(x,y):
+		    Inicio 
+			X = valor;
+			Y = valor;
+			Ponto A = (x,y);
+		    Fim
+
+13.
+Modelo Ponto2D
+	Dados x, y, ponto(x X,y Y), linha(ponto a, ponto b), retângulo (ponto a, ponto b, ponto c);
+
+	Operação DesenharPonto(x valorx,y valory):
+		  Inicio 
+			Ponto A = (valorx, valory);
+		   Fim
+	Operação Linha (Ponto A, Ponto B):
+		   Inicio
+			Linha AB = (A, B);
+		    Fim
+
+
+14.
+modelo Ponto2DRetangulo
+	Dados x, y, ponto(x X,y Y), linha(ponto a, ponto b), retângulo (ponto a, ponto b, ponto c);
+
+	Operação DesenharPonto(x valorx,y valory):
+		   Inicio 
+			Ponto A = (valorx, valory);
+		   Fim
+	
+	Operação Linha (Ponto A, Ponto B):
+		    Inicio
+			Linha AB = (A, B);
+		    Fim
+
+	Operação Retângulo (x1,y1, x2,y2 ,x3,y3 , x4,y4):
+		Inicio 
+			Se os pontos forem diferentes entre si então faça:
+				Ponto A = (x1,y1);
+				Ponto B = (x2,y2);
+				Ponto C = (x3,y3);
+				Ponto D = (x4,y4);
+				Linha AB = (A, B);
+				Linha BC = (B, C);
+				Linha CD = (C, D);
+				Linha DA = (D, A);
+				Alerta (“Retângulo formado!”);
+			Senão
+				Alerta (“Se algum dos pontos forem iguais não irá montar a figura do retângulo”);
+		Fim
+
+15. 
+Operação dataÉValida(umDia, umMês, umAno):
+OBS: umAno/100 significa que se o resultado for inteiro vai retornar verdade;
+      Inicio
+		 Se (umAno / 4 e !(umAno/100)) e (umAno/400)  entao faça:
+			Se (umMês % 2 == 0 e umMês != 2) então faça:
+				Se ((dia >=1) e (dia <=30) e (umMês >= 1) e (umMês <= 12) então faca:
+					Return verdadeiro;
+			Senao se ( umMês != 2) então faça:
+				Se ((dia >=1) e (dia <=31) e (umMês >= 1) e (umMês <= 12) então faca:
+					Return verdadeiro;
+			Se umMês == 2 então faça:
+				Se (dia >= 1) e (dia <= 29) então faça:
+					Return verdadeiro;
+		 Senao 
+			Se (umMês % 2 == 0 e umMês != 2) então faça:
+				Se ((dia >=1) e (dia <=30) e (umMês >= 1) e (umMês <= 12) então faca:
+					Return verdadeiro;
+			Senao se ( umMês != 2) então faça:
+				Se ((dia >=1) e (dia <=31) e (umMês >= 1) e (umMês <= 12) então faca:
+					Return verdadeiro;
+			Se umMês == 2 então faça:
+				Se (dia >= 1) e (dia <= 28) então faça:
+					Return verdadeiro;
+	   Return Falso;
+      Fim
+			
+16.
+Modelo Data
+Dado horas = 0, minutos = 0, segundos = 0, umDia = 1, umMês = 1, umAno = 1000, diaDaSemana = “ ”);
+
+Operação DataEHora ():
+	Se dataÉValida(umDia, umMês, umAno) então faça:
+		    Temporalizador();
+	Se umMês é janeiro ou umMês é fevereiro e
+		    umAno -= 1;
+	AnoIni = umAno / 100;
+	AnoFIn = umAno / 10;
+// formula para descobrir o dia da semana
+	F = umDia + ((13 * umMês-1)/5  + AnoFin + (AnoFin/4) + (c/4) – 2 * Anoini;
+	Se F == 0 então 
+			diaDaSemana = “Sábado”
+	Senão F == 1 então
+			diaDaSemana = “Domingo”
+	Senão F == 2 então
+			diaDaSemana = “Segunda-Feira”
+	Senão F == 3 então
+			diaDaSemana = “Terça-Feira”
+	Senão F == 4 então
+			diaDaSemana = “Quarta-Feira”
+	Senão F == 5 então
+			diaDaSemana = “Quinta Feira”
+	Senão 
+			diaDaSemana = “Sexta- Feira”
+
+	Return (“É dia “ + umDia + “ do mês “ + umMês + “ do ano de “ + umAno + 
+			“, as “ + horas + “ horas e “ + minutos + “ minutos e “ + segundos );
+
